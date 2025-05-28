@@ -3,9 +3,6 @@
 html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit;}
 
 body {  
-	/*font-family: sans-serif;
-	font-weight: 400;
-	font-style: normal;*/
     font-family: muli, sans-serif;
     font-style: normal;
     font-weight: 250;
@@ -37,7 +34,12 @@ nav ul li a {
     font-style: normal;
     font-weight: 700;  
     font-size: 1.2em; 
+    transition-duration: 0.3s;
     }
+
+nav ul li a:hover {
+    color: rgb(156, 131, 106)
+}
 
 nav {
     margin-bottom: 1rem; 
@@ -54,9 +56,6 @@ section {
 
 section.main h2 {
     color: rgb(156, 131, 106);
-    /*font-weight: 700;
-    font-size: 2.5em;
-    font-family: serif;*/
     font-family: amandine, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -65,9 +64,6 @@ section.main h2 {
 
 section.secondary h2 {
     color: rgb(156, 131, 106);
-    /*font-weight: 600;
-    font-size: 1.75em;
-    font-family: serif;*/
     font-family: amandine, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -77,9 +73,6 @@ section.secondary h2 {
 
 section.tertiary h2 {
     color: rgb(156, 131, 106);
-    /*font-weight: 600;
-    font-size: 1.15em;
-    font-family: serif;*/
     font-family: amandine, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -91,9 +84,6 @@ section.tertiary h2 {
 
 section.tertiary2 h2 {
     color: rgb(156, 131, 106);
-    /*font-weight: 600;
-    font-size: 1.15em;
-    font-family: serif;*/
     font-family: amandine, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -127,9 +117,6 @@ figcaption {
 
 h2 {
     color: rgb(156, 131, 106);
-    /*font-weight: 700;
-    font-size: 2.5em;
-    font-family: serif;*/
     font-family: amandine, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -142,6 +129,185 @@ aside {
     padding: 1rem 0.5rem;
 }
 
+div.photohead h2 {
+    color: rgb(156, 131, 106);
+    font-family: amandine, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.5em;
+    margin: 0.2em 0.3rem 0em;
+}
+
+main.photogallery {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: calc(133% + 4em);
+    grid-column: 1/3;
+    /*max-width: 40em*/
+}
+
+main.photogallery figure{
+    margin: 0;
+    width: calc(100%-2em);
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+}
+
+main.photogallery figcaption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1em 0;
+    color: #888;
+}
+
+input:nth-of-type(1):checked ~ main figure:nth-of-type(1),
+input:nth-of-type(2):checked ~ main figure:nth-of-type(2),
+input:nth-of-type(3):checked ~ main figure:nth-of-type(3),
+input:nth-of-type(4):checked ~ main figure:nth-of-type(4),
+input:nth-of-type(5):checked ~ main figure:nth-of-type(5),
+input:nth-of-type(6):checked ~ main figure:nth-of-type(6),
+input:nth-of-type(7):checked ~ main figure:nth-of-type(7),
+input:nth-of-type(8):checked ~ main figure:nth-of-type(8){
+    opacity: 1;
+}
+
+nav.photogallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 0.2em;
+    grid-column: 1/3;
+}
+
+nav.photogallery label:hover {
+    opacity: 70%;
+}
+
+input {
+    display: none;
+}
+
+form input {
+    display: inline-block;
+}
+
+.personal-info ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.personal-info ul li {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0 1em 0;
+}
+
+.personal-info ul li label {
+	flex: 0 0 8em;
+}
+
+.newsletter ul {
+    list-style-type: none;
+}
+
+section.personal-info ul li input[type="text"],
+section ul li input[type="email"],
+section ul li input[type="tel"],
+section ul li select {
+	 flex: 2 0 25em;  
+	box-sizing: border-box;
+}
+
+textarea {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;  
+	height: 5em;
+	background: #fcfcfc;
+	border: 1px solid #e8e8e8;
+	padding: 0.4em;
+	font-family: muli, sans-serif;
+    font-style: normal;
+    font-weight: 250;
+	color: rgb(100, 100, 100);
+}
+
+.personal-info {
+    background-color: rgb(232, 208, 202);
+    padding: 1em 1.5em;
+}
+
+.personal-info h3 {
+    font-family: amandine, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0.5rem 0em 0.2em;
+    color: rgb(156, 131, 106);
+}
+
+p.personal {
+    margin: 0em 0.3rem 1em;
+    color: rgb(0, 0, 0);
+    font-family: muli, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.newsletter {
+    background-color: rgb(238, 230, 222);
+    padding: 1em 1.5em;
+}
+
+.newsletter h3 {
+    font-family: amandine, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0.5rem 0em 0.2em;
+    color: rgb(156, 131, 106);
+}
+
+.newsletter ul li {
+    margin: 1em;
+    font-style: italic;
+}
+
+.notes {
+    background-color: rgb(232, 208, 202);
+    padding: 1em 1.5em;
+}
+
+.notes h3 {
+    font-family: amandine, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0.5rem 0em 0.2em;
+    color: rgb(156, 131, 106);
+}
+
+.button {
+    margin: 2rem 1em 5rem;
+}
+
+button {
+    font-family: fisterra-fora, sans-serif;
+    font-style: normal;
+    font-weight: 400;  
+    font-size: 1.3em; 
+    color: rgb(212, 164, 153);
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgb(246, 237, 230);
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: rgb(212, 164, 153);
+    color: rgb(255, 255, 255);
+}
 
 @media only screen and (min-width: 40em) {
 
@@ -284,4 +450,43 @@ aside {
     section.secondary a p {
         flex: 0 0 4em;
     }
+
+    main.photogallery {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: calc(90% + 2em);
+        grid-column: 1/3;
+        max-width: 40em;
+    }
+
+    nav.photogallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 0.2em;
+        grid-column: 1/3;
+        max-width: 40em;
+    }
+
+    .button {
+        margin: 2rem 0em 5rem;
+    }
+    
+    button {
+        font-family: fisterra-fora, sans-serif;
+        font-style: normal;
+        font-weight: 400;  
+        font-size: 1.5em; 
+        color: rgb(212, 164, 153);
+        border: none;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        background-color: rgb(246, 237, 230);
+        transition-duration: 0.4s;
+    }
+    
+    button:hover {
+        background-color: rgb(212, 164, 153);
+        color: rgb(255, 255, 255);
+    }
+
 }
